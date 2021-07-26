@@ -1,0 +1,5 @@
+﻿#ClientType,Name,AddressLine1,AddressLine2,AddressLine3,City,PostCode,Country,Turnover,EntityType
+LegalEntity,Microsoft,1 Small Street,,,Redmond,98052,USA,100000000,Listed
+LegalEntity,Red Cross,1 Big Street,,,London,SE1 1AA,United Kingdom,22222,Charity
+NaturalPerson,Joe Doe,2 Middle Street,,,Isle of Wight,IW1 1BB,United Kingdom,,
+LegalEntity,Facebook NL,Oudezijds Voorburgwal 230,,,Amsterdam,1012 EL,Netherlands,12345000,Listed

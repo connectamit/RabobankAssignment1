@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5E0613B3-EBDA-4BE5-99FB-A301EAB9A685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.GCOB.Domain", "Rabobank.GCOB.Domain\Rabobank.GCOB.Domain.csproj", "{5F745F4B-B5A1-4784-913F-4769D2951409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.GCOB.Domain.Implementation", "Rabobank.GCOB.Domain.Implementation\Rabobank.GCOB.Domain.Implementation.csproj", "{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{0DA9EC1E-B6EB-4A71-BA4B-1DEC1B086C89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.GCOB.External", "Rabobank.GCOB.External\Rabobank.GCOB.External.csproj", "{A32FA787-6537-4B86-B917-5D5C3F9223C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{68C13AB8-1F84-4557-9BB6-5DE3BF28FCB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{28D9BF27-AD6A-496C-9E83-FAA12D6EE758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.GCOB.Domain.Implementations.Tests.Unit", "Rabobank.GCOB.Domain.Implementations.Tests.Unit\Rabobank.GCOB.Domain.Implementations.Tests.Unit.csproj", "{94AA213E-EAFA-4F5A-B7EF-A26D231E688B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F745F4B-B5A1-4784-913F-4769D2951409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F745F4B-B5A1-4784-913F-4769D2951409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F745F4B-B5A1-4784-913F-4769D2951409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F745F4B-B5A1-4784-913F-4769D2951409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32FA787-6537-4B86-B917-5D5C3F9223C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32FA787-6537-4B86-B917-5D5C3F9223C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32FA787-6537-4B86-B917-5D5C3F9223C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32FA787-6537-4B86-B917-5D5C3F9223C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AA213E-EAFA-4F5A-B7EF-A26D231E688B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AA213E-EAFA-4F5A-B7EF-A26D231E688B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AA213E-EAFA-4F5A-B7EF-A26D231E688B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AA213E-EAFA-4F5A-B7EF-A26D231E688B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F745F4B-B5A1-4784-913F-4769D2951409} = {5E0613B3-EBDA-4BE5-99FB-A301EAB9A685}
+		{3D57BD1F-F5D1-42DB-9C67-F5ABD9BC0C62} = {5E0613B3-EBDA-4BE5-99FB-A301EAB9A685}
+		{A32FA787-6537-4B86-B917-5D5C3F9223C5} = {0DA9EC1E-B6EB-4A71-BA4B-1DEC1B086C89}
+		{94AA213E-EAFA-4F5A-B7EF-A26D231E688B} = {68C13AB8-1F84-4557-9BB6-5DE3BF28FCB9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF83A3A2-74C0-4CDA-9407-6175DEDBC744}
+	EndGlobalSection
+EndGlobal

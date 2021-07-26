@@ -1,0 +1,12 @@
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.Domain.Implementation.dll
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.Domain.Implementation.pdb
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\obj\Debug\Rabobank.GCOB.Domain.Implementation.csproj.AssemblyReference.cache
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\obj\Debug\Rabobank.GCOB.Domain.Implementation.csproj.CoreCompileInputs.cache
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\obj\Debug\Rabobank.GCOB.Domain.Implementation.dll
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\obj\Debug\Rabobank.GCOB.Domain.Implementation.pdb
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.Domain.dll
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.External.dll
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.Domain.pdb
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Rabobank.GCOB.External.pdb
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\obj\Debug\Rabobank.GCOB.Domain.Implementation.csproj.CopyComplete
+G:\Rabobank.GCOB\Rabobank.GCOB\Rabobank.GCOB.Domain.Implementation\bin\Debug\Data\Data.csv
