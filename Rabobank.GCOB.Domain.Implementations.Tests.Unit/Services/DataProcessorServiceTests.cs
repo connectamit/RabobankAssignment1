@@ -26,7 +26,6 @@ namespace Rabobank.GCOB.Domain.Implementations.Tests.Unit.Services
             var isDataProcessed = _dataProcessorService.ProcessData().GetAwaiter().GetResult();
 
             Assert.IsTrue(isDataProcessed);
-
         }
     }
 }

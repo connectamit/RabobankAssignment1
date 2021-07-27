@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConstants.cs" />
     <Compile Include="Helper\ProcessClientData.cs" />
     <Compile Include="Helper\ReadData.cs" />
     <Compile Include="Repositories\Repository.cs" />

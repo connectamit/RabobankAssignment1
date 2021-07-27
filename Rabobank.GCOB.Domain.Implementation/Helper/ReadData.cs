@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
-    public class ReadData
+    internal class ReadData
     {
-        public List<string[]> GetData()
+        protected internal List<string[]> GetData()
         {
             var a = System.IO.File.ReadAllLines(@"Data\Data.csv", Encoding.Default);
             var b = a.Select(r => r.Split(',')).ToList();

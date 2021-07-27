@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Rabobank.GCOB.Domain.Implementation.Services
 {
-# region DataProcessorService is the Service class, it is the business layer class which is invoked in controller/api and also used in unit test.
+    #region DataProcessorService is the Service class, it is the business layer class which is invoked in controller/api and also used in unit test.
     public class DataProcessorService : ProcessClientData, IDataProcessorService
     {
         /// <summary>
@@ -36,18 +36,17 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
         {
             try
             {
-                var file = (new ReadData()).GetData();
-
                 Client client = null;
                 string roboticsResult = null;
-                var files = file.Skip(1);
+
+                var files = (new ReadData()).GetData().Skip(1);
 
                 foreach (var line in files)
                 {
 
-                    client = OperateClientData(line).Result;
+                    client = await OperateClientData(line); ;
 
-                    if (string.Compare(line[0], "LegalEntity", true) == 0 && client.Turnover> 1000000)
+                    if (string.Compare(line[0], AppConstants.LegaEntity, true) == 0 && client.Turnover > 1000000)
                     {
                         roboticsResult = Robotics.ScreeningAsync(client.FullName, client.Address.Country).Result;
                     }
@@ -62,6 +61,6 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
             }
             return true;
         }
-    } 
+    }
     #endregion
 }

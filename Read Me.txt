@@ -1,6 +1,6 @@
 I have seggregated the whole solution into folders
 Folders have necessary project inside it serving its own purpose
-Some of the things I have assumed, ORM implementation to be precise entity framework
+Some of the things I have assumed, ORM implementation,  to be precise entity framework
 
 Below is the architecture
 
@@ -12,5 +12,7 @@ repository class is injected into service layer class
 service layer class inturn would be used in controller class 
 
 api class is the controller class, which is currently empty
+
+There are code commented in reposiory class it is for better understanding
 
 Please run the test case
