@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Rabobank.GCOB.Domain.Implementation.Services
 {
     #region DataProcessorService is the Service class, it is the business layer class which is invoked in controller/api and also used in unit test.
-    public class DataProcessorService : ProcessClientData, IDataProcessorService
+    public class DataProcessorService : ClientDataReader, IDataProcessorService
     {
         /// <summary>
         /// Private variable of irepository for dependency injection
@@ -29,7 +29,7 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
         }
 
         /// <summary>
-        /// Process data is the main method for reading the data from the file and saving it in database
+        /// This method is used for reading the data from the file and saving it in database
         /// </summary>
         /// <returns></returns>
         public async Task<bool> ProcessData()
@@ -44,22 +44,23 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
                 foreach (var line in files)
                 {
 
-                    client = await OperateClientData(line); ;
+                    client = OperateClientData(line); ;
 
                     if (string.Compare(line[0], AppConstants.LegaEntity, true) == 0 && client.Turnover > 1000000)
                     {
-                        roboticsResult = Robotics.ScreeningAsync(client.FullName, client.Address.Country).Result;
+                        roboticsResult =await Robotics.ScreeningAsync(client.FullName, client.Address.Country);
                     }
 
-                    if (roboticsResult != AppConstants.RoboticsResultFailed && client != null)
+                    if (roboticsResult != AppConstants.RoboticsResultFailed)
                         await _irepository.Update(client);
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw new Exception(AppConstants.CustomExceptionMessageProcessingData, ex);
             }
-            return true;
         }
     }
     #endregion

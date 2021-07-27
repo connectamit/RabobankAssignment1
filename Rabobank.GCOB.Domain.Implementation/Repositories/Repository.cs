@@ -1,9 +1,6 @@
-﻿using Rabobank.GCOB.Domain.Interfaces.Models;
-using Rabobank.GCOB.Domain.Interfaces.Repositories;
+﻿using Rabobank.GCOB.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Rabobank.GCOB.Domain.Implementation.Interface
@@ -19,7 +16,7 @@ namespace Rabobank.GCOB.Domain.Implementation.Interface
         }
 
         /// <summary>
-        /// Delete
+        /// Delete the object
         /// </summary>
         /// <param name="itemToUpdate"></param>
         /// <returns></returns>
@@ -48,7 +45,7 @@ namespace Rabobank.GCOB.Domain.Implementation.Interface
         }
 
         /// <summary>
-        /// Insert
+        /// Insert the object
         /// </summary>
         /// <param name="itemToUpdate"></param>
         /// <returns></returns>
@@ -68,15 +65,20 @@ namespace Rabobank.GCOB.Domain.Implementation.Interface
         }
 
         /// <summary>
-        /// Update
+        /// Update the object
         /// </summary>
         /// <param name="itemToUpdate"></param>
         /// <returns></returns>
         public async Task<bool> Update(T itemToUpdate)
         {
-            //throw new NotImplementedException();
-
-            return true;
+            try
+            {
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(AppConstants.CustomExceptionMessageUpdate,ex);
+            }
         }
     }
 } 

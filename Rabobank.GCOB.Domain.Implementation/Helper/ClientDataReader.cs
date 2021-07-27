@@ -1,30 +1,27 @@
 ﻿using Rabobank.GCOB.Domain.Interfaces.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
     #region ProcessClientData is one of the helper class and can be used in many classes as base class
-    public class ProcessClientData
+    public class ClientDataReader
     {
         /// <summary>
-        /// OperateClientData is the method for generating client object
+        /// This method is used for processing generating client object from the file records
         /// </summary>
-        /// <param name="file"></param>
+        /// <param name="lineItem"></param>
         /// <returns></returns>
-        protected internal Task<Interfaces.Models.Client> OperateClientData(string[] file)
+        protected internal  Client OperateClientData(string[] lineItem)
         {
             Client client = new Client();
             Address address = new Address();
 
             try
             {
-                if (!string.IsNullOrEmpty(file[1]))
+                if (!string.IsNullOrEmpty(lineItem[1]))
                 {
-                    client.FullName = file[1];
+                    client.FullName = lineItem[1];
 
                     if (client.FullName.LastIndexOf(" ") >= 0)
                     {
@@ -37,25 +34,25 @@ namespace Rabobank.GCOB.Domain.Implementation.Helper
                     }
                 }
 
-                address.Line1 = file[2];
-                address.Line2 = file[3];
-                address.Line3 = file[4];
-                address.City = file[5];
-                address.PostCode = file[6];
-                address.Country = file[7];
+                address.Line1 = lineItem[2];
+                address.Line2 = lineItem[3];
+                address.Line3 = lineItem[4];
+                address.City = lineItem[5];
+                address.PostCode = lineItem[6];
+                address.Country = lineItem[7];
                 client.Address = address;
 
                 decimal turnOver = 0;
 
-                if (decimal.TryParse(file[8], out turnOver))
+                if (decimal.TryParse(lineItem[8], out turnOver))
                 {
                     client.Turnover = turnOver;
                 }
 
-                if (string.Compare(file[0], AppConstants.LegaEntity, true) == 0)
+                if (string.Compare(lineItem[0], AppConstants.LegaEntity, true) == 0)
                 {
                     EntityType entityType;
-                    if (Enum.TryParse<EntityType>(file[9], out entityType))
+                    if (Enum.TryParse<EntityType>(lineItem[9], out entityType))
                     {
                         client.EntityType = entityType;
                     }
@@ -67,9 +64,9 @@ namespace Rabobank.GCOB.Domain.Implementation.Helper
             }
             catch (Exception ex)
             {
-                
+                throw new Exception(AppConstants.CustomExceptionMessageClientDataReader, ex);
             }
-            return Task.FromResult(client);
+            return client;
         }
     }
     #endregion

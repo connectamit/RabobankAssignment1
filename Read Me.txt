@@ -1,5 +1,20 @@
 I have seggregated the whole solution into folders
 Folders have necessary project inside it serving its own purpose
+-----------------------------------------------------------------------------
+
+API folder(Empty)
+Which will have all the controllers Controller
+
+Domain Folder
+has two projects
+Domain project library-which will have all the interfaces and models
+Domain implementation project library-which will have the inplementation of all the interfaces
+
+External Folder
+External project library- which has external library
+
+----------------------------------------------------------------------------------
+
 Some of the things I have assumed, ORM implementation,  to be precise entity framework
 
 Below is the architecture
@@ -7,12 +22,4 @@ Below is the architecture
 API Endpoint(Controller)-> Service Layer- Repository Layer- DBContext-DBContext-Database
 Unit Test Case-> Service Layer- Repository Layer- DBContext-DBContext-Database
 
-Repository classs has all the methods for interacting with dbcontext(entity framework class)
-repository class is injected into service layer class
-service layer class inturn would be used in controller class 
 
-api class is the controller class, which is currently empty
-
-There are code commented in reposiory class it is for better understanding
-
-Please run the test case

@@ -1,9 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Rabobank.GCOB.Domain.Implementation.Interface;
 using Rabobank.GCOB.Domain.Implementation.Services;
 using Rabobank.GCOB.Domain.Interfaces.Repositories;
-using System;
 using System.Threading.Tasks;
 
 namespace Rabobank.GCOB.Domain.Implementations.Tests.Unit.Services
