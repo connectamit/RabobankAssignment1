@@ -1,37 +1,35 @@
-﻿using Rabobank.GCOB.Domain.Implementation.Helper;
-using Rabobank.GCOB.Domain.Interfaces.Models;
-using Rabobank.GCOB.Domain.Interfaces.Repositories;
-using Rabobank.GCOB.Domain.Interfaces.Services;
-using Rabobank.GCOB.External;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rabobank.GCOB.Domain.Implementation.Services
+﻿namespace Rabobank.GCOB.Domain.Implementation.Services
 {
-    #region DataProcessorService is the Service class, it is the business layer class which is invoked in controller/api and also used in unit test.
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Rabobank.GCOB.Domain.Implementation.Helper;
+    using Rabobank.GCOB.Domain.Interfaces.Models;
+    using Rabobank.GCOB.Domain.Interfaces.Repositories;
+    using Rabobank.GCOB.Domain.Interfaces.Services;
+    using Rabobank.GCOB.External;
+
     public class DataProcessorService : ClientDataReader, IDataProcessorService
     {
         /// <summary>
-        /// Private variable of irepository for dependency injection
+        /// Private variable of irepository for dependency injection.
         /// </summary>
-        private readonly IRepository<Interfaces.Models.Client> _irepository;
+        private readonly IRepository<Interfaces.Models.Client> irepository;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DataProcessorService"/> class.
         /// Construtor for dependency injection of repository
         /// </summary>
-        /// <param name="irepository"></param>
+        /// <param name="irepository"> DI for repsitory.</param>
         public DataProcessorService(IRepository<Interfaces.Models.Client> irepository)
         {
-            this._irepository = irepository;
+            this.irepository = irepository;
         }
 
         /// <summary>
-        /// This method is used for reading the data from the file and saving it in database
+        /// This method is used for reading the data from the file and saving it in database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A <see cref="Task"/>returns boolean if successfully processed data .</returns>
         public async Task<bool> ProcessData()
         {
             try
@@ -39,12 +37,11 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
                 Client client = null;
                 string roboticsResult = null;
 
-                var files = (new ReadData()).GetData().Skip(1);
+                var files = new ReadData().GetData().Skip(1);
 
                 foreach (var line in files)
                 {
-
-                    client = OperateClientData(line); ;
+                    client = this.OperateClientData(line);
 
                     if (string.Compare(line[0], AppConstants.LegaEntity, true) == 0 && client.Turnover > 1000000)
                     {
@@ -52,7 +49,9 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
                     }
 
                     if (roboticsResult != AppConstants.RoboticsResultFailed)
-                        await _irepository.Update(client);
+                    {
+                        await this.irepository.Update(client);
+                    }
                 }
 
                 return true;
@@ -63,5 +62,4 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
             }
         }
     }
-    #endregion
 }

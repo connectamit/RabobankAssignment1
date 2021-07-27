@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Rabobank.GCOB.Domain.Implementation.Helper
+﻿namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
-    #region ReadData is one of the helper class whose prime objective is to read data from csv
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     internal class ReadData
     {
         /// <summary>
-        /// This method is used to read data from CSV files
+        /// This method is used for reading the records from csv file.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A <see cref="List{T}"/>returns client data.</returns>
         protected internal List<string[]> GetData()
         {
             try
@@ -26,5 +25,4 @@ namespace Rabobank.GCOB.Domain.Implementation.Helper
             }
         }
     }
-    #endregion
 }

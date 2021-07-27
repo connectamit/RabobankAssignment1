@@ -1,18 +1,17 @@
-﻿using Rabobank.GCOB.Domain.Interfaces.Models;
-using System;
-using System.Threading.Tasks;
-
-namespace Rabobank.GCOB.Domain.Implementation.Helper
+﻿namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
-    #region ProcessClientData is one of the helper class and can be used in many classes as base class
+    using System;
+    using System.Threading.Tasks;
+    using Rabobank.GCOB.Domain.Interfaces.Models;
+
     public class ClientDataReader
     {
         /// <summary>
-        /// This method is used for processing generating client object from the file records
+        /// This method is used for processing generating client object from the file records.
         /// </summary>
-        /// <param name="lineItem"></param>
-        /// <returns></returns>
-        protected internal  Client OperateClientData(string[] lineItem)
+        /// <param name="lineItem"> passes lineitem from. </param>
+        /// <returns>A <see cref="Client"/>returns client.</returns>
+        protected internal Client OperateClientData(string[] lineItem)
         {
             Client client = new Client();
             Address address = new Address();
@@ -66,8 +65,8 @@ namespace Rabobank.GCOB.Domain.Implementation.Helper
             {
                 throw new Exception(AppConstants.CustomExceptionMessageClientDataReader, ex);
             }
+
             return client;
         }
     }
-    #endregion
 }

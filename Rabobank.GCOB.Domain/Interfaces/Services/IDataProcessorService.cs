@@ -1,11 +1,9 @@
-﻿using System.Threading.Tasks;
-
-namespace Rabobank.GCOB.Domain.Interfaces.Services
+﻿namespace Rabobank.GCOB.Domain.Interfaces.Services
 {
-    #region Interface for Data processor service
+    using System.Threading.Tasks;
+
     public interface IDataProcessorService
     {
         Task<bool> ProcessData();
-    } 
-    #endregion
+    }
 }
