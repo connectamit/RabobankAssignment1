@@ -9,5 +9,6 @@ namespace Rabobank.GCOB.Domain.Implementation
     public class AppConstants
     {
         public const string LegaEntity = "LegalEntity";
+        public const string RoboticsResultFailed = "Failed";
     }
 }

@@ -51,7 +51,7 @@ namespace Rabobank.GCOB.Domain.Implementation.Services
                         roboticsResult = Robotics.ScreeningAsync(client.FullName, client.Address.Country).Result;
                     }
 
-                    if (roboticsResult != "Failed" && client != null)
+                    if (roboticsResult != AppConstants.RoboticsResultFailed && client != null)
                         await _irepository.Update(client);
                 }
             }
