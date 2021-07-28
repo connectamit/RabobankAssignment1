@@ -1,7 +1,7 @@
 ﻿namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
-    using Rabobank.GCOB.Domain.Interfaces.Models;
     using System;
+    using Rabobank.GCOB.Domain.Interfaces.Models;
 
     public class ClientDataReader
     {
