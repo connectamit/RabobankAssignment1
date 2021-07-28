@@ -1,8 +1,7 @@
 ﻿namespace Rabobank.GCOB.Domain.Implementation.Helper
 {
-    using System;
-    using System.Threading.Tasks;
     using Rabobank.GCOB.Domain.Interfaces.Models;
+    using System;
 
     public class ClientDataReader
     {
@@ -11,7 +10,7 @@
         /// </summary>
         /// <param name="lineItem"> passes lineitem from. </param>
         /// <returns>A <see cref="Client"/>returns client.</returns>
-        protected internal Client OperateClientData(string[] lineItem)
+        protected internal Client ProcessClientData(string[] lineItem)
         {
             Client client = new Client();
             Address address = new Address();

@@ -11,6 +11,7 @@
     using Rabobank.GCOB.External;
 
     public class DataProcessorService : ClientDataReader, IDataProcessorService
+
     {
         /// <summary>
         /// Private variable of irepository for dependency injection.
@@ -42,7 +43,7 @@
 
                 foreach (var line in files)
                 {
-                    client = this.OperateClientData(line);
+                    client = this.ProcessClientData(line);
 
                     if (string.Compare(line[0], AppConstants.LegaEntity, true) == 0 && client.Turnover > 1000000)
                     {
