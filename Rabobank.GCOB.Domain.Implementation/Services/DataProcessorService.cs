@@ -1,6 +1,7 @@
 ﻿namespace Rabobank.GCOB.Domain.Implementation.Services
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using Rabobank.GCOB.Domain.Implementation.Helper;
@@ -37,7 +38,7 @@
                 Client client = null;
                 string roboticsResult = null;
 
-                var files = new ReadData().GetData().Skip(1);
+                var files = new ReadData().GetData().Skip(1) as List<string[]>;
 
                 foreach (var line in files)
                 {
@@ -45,7 +46,7 @@
 
                     if (string.Compare(line[0], AppConstants.LegaEntity, true) == 0 && client.Turnover > 1000000)
                     {
-                        roboticsResult =await Robotics.ScreeningAsync(client.FullName, client.Address.Country);
+                        roboticsResult = await Robotics.ScreeningAsync(client.FullName, client.Address.Country);
                     }
 
                     if (roboticsResult != AppConstants.RoboticsResultFailed)
